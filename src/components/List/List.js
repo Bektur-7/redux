@@ -7,8 +7,9 @@ import {Delete} from '../../redux/actions/app-actions'
 
 function List(props) {
     
- 
+    console.log(props.data)
     return (
+        
         <ul className="names">
             {props.data.map((task, index) => (
                 <Card 
@@ -18,12 +19,15 @@ function List(props) {
                 onDelete ={() => props.Delete(index)}
                 onChange ={() => props.changeStatus(index)}
                 />
+            
             ))}
+        
         </ul>
     );
 }
 
 const mapStateToProps = (state) => state.AppReducer
+
 
 const mapDispatchToProps = (dispatch) => ({
 

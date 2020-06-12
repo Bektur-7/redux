@@ -4,12 +4,11 @@ import {addTask, changeTitle} from '../../redux/actions/app-actions'
 
 class AddTask extends Component {
 
-    state = 
-
-    handleChangeTitle = () => {
+    handleChangeTitle = (e) => {
       
         // const title = e.target.value;
-        this.setState({ title});
+        // this.setState({ title});
+        this.props.changeTitle(e)
 
     }
 

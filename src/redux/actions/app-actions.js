@@ -34,3 +34,10 @@ export const changeTitle = (e) => {
     }
 }
 
+export const add = (e) => {
+    return {
+        type:'CHANGE_TITLE',
+        payload: e.target.value
+    }
+}
+

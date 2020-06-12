@@ -7,21 +7,25 @@ const initialState = {
         {
          title: 'тренировка',
          status: true
-        },
+        }
         
    
-       ]
-       {
+       ],
+
         title: '',
         status: false
-    }
+    
+        
 }
 function AppReducer (state = initialState, action){
     switch (action.type) {
         case 'ADD-TASK': return {
             data: [
-                ...state.data,
-                action.payload
+                ...state.data, {
+                    title: state.title,
+                    status: false
+                   
+                }
             ]
 
         }
@@ -32,7 +36,8 @@ function AppReducer (state = initialState, action){
             data: action.payload
         }
         case 'CHANGE_TITLE': return {
-            data: action.payload
+            ...state,
+            title: action.payload
         }
 
        
